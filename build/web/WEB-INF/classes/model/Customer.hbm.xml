@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Customer" table="customer" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="customer_id" />
+            <generator class="identity" />
+        </id>
+        <property name="fname" type="string">
+            <column name="fname" length="50" not-null="true" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lname" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="cntNumber" type="string">
+            <column name="cnt_number" length="20" not-null="true" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" not-null="true" />
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at" length="19" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="reviews" table="review" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer" not-null="true" />
+            </key>
+            <one-to-many class="model.Review" />
+        </set>
+        <set name="customerOrders" table="customer_order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_id" not-null="true" />
+            </key>
+            <one-to-many class="model.CustomerOrder" />
+        </set>
+        <set name="shoppingCarts" table="shopping_cart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_id" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="model.ShoppingCart" />
+        </set>
+        <set name="cardDetailses" table="card_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_id" not-null="true" />
+            </key>
+            <one-to-many class="model.CardDetails" />
+        </set>
+        <set name="recoveries" table="recovery" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer" not-null="true" />
+            </key>
+            <one-to-many class="model.Recovery" />
+        </set>
+        <set name="addresses" table="address" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_id" not-null="true" />
+            </key>
+            <one-to-many class="model.Address" />
+        </set>
+        <set name="wishLists" table="wish_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer" not-null="true" />
+            </key>
+            <one-to-many class="model.WishList" />
+        </set>
+    </class>
+</hibernate-mapping>

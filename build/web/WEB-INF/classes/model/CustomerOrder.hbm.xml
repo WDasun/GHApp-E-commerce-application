@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.CustomerOrder" table="customer_order" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="address" class="model.Address" fetch="select">
+            <column name="shipping_address" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cardDetails" class="model.CardDetails" fetch="select">
+            <column name="card_details" />
+        </many-to-one>
+        <many-to-one name="customer" class="model.Customer" fetch="select">
+            <column name="customer_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="orderStatus" class="model.OrderStatus" fetch="select">
+            <column name="order_status" not-null="true" />
+        </many-to-one>
+        <many-to-one name="shippingType" class="model.ShippingType" fetch="select">
+            <column name="shipping_type_id" not-null="true" />
+        </many-to-one>
+        <property name="orderTotal" type="double">
+            <column name="order_total" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="orderDate" type="timestamp">
+            <column name="order_date" length="19" not-null="true" />
+        </property>
+        <set name="reviews" table="review" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customerOrder" not-null="true" />
+            </key>
+            <one-to-many class="model.Review" />
+        </set>
+        <set name="invoices" table="invoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_order_id" not-null="true" />
+            </key>
+            <one-to-many class="model.Invoice" />
+        </set>
+        <set name="orderLines" table="order_line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_order_id" not-null="true" />
+            </key>
+            <one-to-many class="model.OrderLine" />
+        </set>
+    </class>
+</hibernate-mapping>

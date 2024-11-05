@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.ProductCategory" table="product_category" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="id" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="productCategory" class="model.ProductCategory" fetch="select">
+            <column name="parent_category_id" length="20" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="variations" table="variation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="category_id" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.Variation" />
+        </set>
+        <set name="productCategories" table="product_category" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parent_category_id" length="20" />
+            </key>
+            <one-to-many class="model.ProductCategory" />
+        </set>
+        <set name="promotions" table="promotion_category" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="category_id" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="model.Promotion">
+                <column name="promotion_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="category_id" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

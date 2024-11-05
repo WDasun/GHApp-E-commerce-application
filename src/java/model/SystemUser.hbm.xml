@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.SystemUser" table="system_user" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="userName" type="string">
+            <column name="user_name" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employee" class="model.Employee" fetch="select">
+            <column name="employee" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="role" class="model.Role" fetch="select">
+            <column name="role" length="20" not-null="true" />
+        </many-to-one>
+        <property name="userPassword" type="string">
+            <column name="user_password" length="45" not-null="true" />
+        </property>
+        <property name="lastLogin" type="timestamp">
+            <column name="last_login" length="19" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="19" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

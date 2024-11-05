@@ -1,0 +1,73 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: white;
+}
+
+.div-siteDetails {
+    font-size: 13px;
+}
+
+.txt-title-siteDetails {
+    font-size: 14px;
+}
+
+.div-variationsAndOptins {
+    font-size: 14px;
+}
+
+.txt-title-leftSideDiv {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn-itemActions {
+    background: white;
+    width: 100%;
+    height: 3rem;
+    border: none;
+}
+
+
+.btn-itemActions:hover {
+    background-color: rgb(234, 237, 237);
+}
+
+.card-item {
+    width: 18rem;
+    height: 35.2rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: rgb(245, 245, 245);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.div-img-item {
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.div-img-item img {
+    transition: transform 0.3s ease;
+}
+
+.card-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-item:hover .div-img-item img {
+    transform: scale(1.3);
+}
+
+.btn-item-view {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+.btn-item-view:hover {
+    background-color: #0056b3;
+}

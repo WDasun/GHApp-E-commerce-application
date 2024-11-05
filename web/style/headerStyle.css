@@ -1,0 +1,88 @@
+.div-headLebal {
+    background-color: rgb(246, 246, 248);
+}
+
+.txt-cnt-headLebal {
+    font-size: 12px;
+}
+
+.c-navbar {
+    background-color: white;
+}
+
+.c-navbar-icon {
+    margin-right: 10px;
+}
+
+.btn-icn-navbar {
+    height: 100%;
+    width: 10rem;
+    border: none;
+    background-color: white;
+    font-weight: 400;
+    font-size: 0.99rem;
+}
+
+.btn-icn-navbar:hover {
+    background-color: rgb(222, 226, 230);
+}
+
+.btn-logo {
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.c-text-heaven {
+    color: rgb(182, 165, 34);
+}
+
+
+/* Off canvas style */
+
+.offCanvas-index {
+    color: #111;
+    width: 370px;
+}
+
+.offCanvas-head-index {
+    background-color: rgb(222, 226, 230);
+    height: 50px;
+}
+
+.offcanvas-title {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.offcanvas-body {
+    background-color: rbg(white);
+}
+
+.txt-patentCategory {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.btn-subCategory {
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    height: 50px;
+}
+
+.btn-subCategory:hover {
+    background-color: rgb(222, 226, 230);
+}
+
+.btn-option-profileManage {
+    width: 100%;
+    height: 3rem;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-option-profileManage:hover {
+    background-color: rgb(222, 226, 230);
+}

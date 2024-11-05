@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.ProductConfiguration" table="product_configuration">
+        <composite-id>
+            <key-many-to-one name="productItem" class="model.ProductItem" column="product_item_id" />
+            <key-many-to-one name="variationOption" class="model.VariationOption" column="variation_option_id" />
+        </composite-id>
+    </class>
+</hibernate-mapping>

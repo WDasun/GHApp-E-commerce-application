@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.CardDetails" table="card_details" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="creditOrDebitCardType" class="model.CreditOrDebitCardType" fetch="select">
+            <column name="card_type_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customer" class="model.Customer" fetch="select">
+            <column name="customer_id" not-null="true" />
+        </many-to-one>
+        <property name="cardNumber" type="string">
+            <column name="card_number" length="16" not-null="true" unique="true" />
+        </property>
+        <property name="cardName" type="string">
+            <column name="card_name" length="45" not-null="true" />
+        </property>
+        <property name="expYear" type="int">
+            <column name="exp_year" not-null="true" />
+        </property>
+        <property name="expMonth" type="byte">
+            <column name="exp_month" not-null="true" />
+        </property>
+        <property name="isDefault" type="boolean">
+            <column name="is_default" not-null="true" />
+        </property>
+        <set name="customerOrders" table="customer_order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="card_details" />
+            </key>
+            <one-to-many class="model.CustomerOrder" />
+        </set>
+    </class>
+</hibernate-mapping>

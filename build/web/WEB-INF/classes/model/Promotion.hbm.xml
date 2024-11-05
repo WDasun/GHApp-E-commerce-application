@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Promotion" table="promotion" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="225" not-null="true" />
+        </property>
+        <property name="discountRate" type="double">
+            <column name="discount_rate" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19" not-null="true" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="productCategories" table="promotion_category" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="promotion_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="model.ProductCategory">
+                <column name="category_id" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="orderLines" table="order_line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="promotion_id" />
+            </key>
+            <one-to-many class="model.OrderLine" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+.c-collaps-div {
+    padding: 0;
+}
+
+.c-carousel-item {
+    height: 650px;
+}
+
+.c-item {
+    height: 100%;
+    object-fit: cover;
+}
+
+.c-overview-items {
+    background-color: rgb(222, 226, 230);
+}
+
+.sale {
+    background-color: white;
+}
+
+.txt-sectionHeadTextStyle-1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.img-bestSellerProduct {
+    width: 19rem;
+}
+
+.deal-item-description {
+    height: auto;
+    /* Adjust height to auto to accommodate two lines of text */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* Limit text to two lines */
+    overflow: hidden;
+    /* Ensures text that exceeds the line limit is hidden */
+    text-overflow: ellipsis;
+    /* Appends ellipsis to text that overflows */
+}
+
+.txt-item-description {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    /* Adjust line-height to ensure text is neatly spaced */
+}

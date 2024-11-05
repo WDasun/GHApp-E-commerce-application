@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.FirstLevelAccess" table="first_level_access" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="role" class="model.Role" fetch="select">
+            <column name="role" length="20" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="f1" type="boolean">
+            <column name="f1" not-null="true" />
+        </property>
+        <property name="f2" type="boolean">
+            <column name="f2" not-null="true" />
+        </property>
+        <property name="f3" type="boolean">
+            <column name="f3" not-null="true" />
+        </property>
+        <property name="f4" type="boolean">
+            <column name="f4" not-null="true" />
+        </property>
+        <property name="f5" type="boolean">
+            <column name="f5" not-null="true" />
+        </property>
+        <property name="f6" type="boolean">
+            <column name="f6" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

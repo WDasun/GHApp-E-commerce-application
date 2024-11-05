@@ -1,0 +1,90 @@
+body {
+    background-color: white;
+}
+
+.div-itemRow-cart {
+    height: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-width: 3px;
+    border-color: transparent;
+    transition: 0.3s;
+}
+
+.div-itemRow-cart:hover {
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-width: 3px;
+    border-color: rgb(227, 205, 160);
+}
+
+.div-imgFrame {
+    height: 100%;
+    width: 25%;
+}
+
+.img-item-cart {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.div-itemDescription-cart {
+    width: 75%;
+}
+
+.div-itemName {
+    font-size: 16px;
+    font-weight: 700;
+    height: 25px;
+    width: 98%;
+}
+
+.txt-itemName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.txt-itemName:hover {
+    cursor: pointer;
+}
+
+.div-itemVariationOptions {
+    font-size: 14px;
+    font-weight: 500;
+    height: 112px;
+}
+
+.btn-qty {
+    width: 35px;
+    height: 30px;
+    border: none;
+}
+
+.btn-removeItem {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: transparent;
+}
+
+.btn-removeItem:hover {
+    background-color: rgb(222, 226, 230);
+}
+
+.cbx-itemSelect-cart {
+    width: 25px;
+    height: 25px;
+}
+
+.cbx-itemSelect-cart:hover {
+    cursor: pointer;
+}

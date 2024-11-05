@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Product" table="product" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="id" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="productCategory" class="model.ProductCategory" fetch="select">
+            <column name="category_id" length="20" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="20" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="225" not-null="true" />
+        </property>
+        <property name="imagePathOne" type="string">
+            <column name="`image_path-one`" length="225" not-null="true" />
+        </property>
+        <property name="imagePathTwo" type="string">
+            <column name="image_path_two" length="225" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="productItems" table="product_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_id" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.ProductItem" />
+        </set>
+    </class>
+</hibernate-mapping>

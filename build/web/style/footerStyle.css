@@ -1,0 +1,16 @@
+.div-icon-youtube,
+.div-icon-instagram,
+.div-icon-facebook {
+    height: 2rem;
+    width: 2rem;
+}
+
+.div-socailMedia {
+    width: fit-content;
+}
+
+.div-footer {
+    background-color: #333333;
+    color: white;
+    height: 9rem;
+}

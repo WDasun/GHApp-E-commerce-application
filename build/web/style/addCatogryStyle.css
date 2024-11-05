@@ -1,0 +1,20 @@
+.div-leftmenu-body,
+.div-leftmenu-head {
+    background-color: white;
+    border-radius: 6px;
+}
+
+.div-leftmenu-head {
+    height: 75px;
+}
+
+.btn-leftmenu-head {
+    height: 42px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.lbl-leftMenu-body {
+    font-weight: 500;
+    font-size: 13.3333px;
+}

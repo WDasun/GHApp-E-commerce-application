@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Review" table="review" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="model.Customer" fetch="select">
+            <column name="customer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customerOrder" class="model.CustomerOrder" fetch="select">
+            <column name="customerOrder" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productItem" class="model.ProductItem" fetch="select">
+            <column name="product" length="20" not-null="true" />
+        </many-to-one>
+        <property name="commentTitle" type="string">
+            <column name="comment_title" length="45" not-null="true" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="1000" not-null="true" />
+        </property>
+        <property name="rate" type="int">
+            <column name="rate" not-null="true" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <set name="reviewHelpfuls" table="review_helpful" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="review" not-null="true" />
+            </key>
+            <one-to-many class="model.ReviewHelpful" />
+        </set>
+    </class>
+</hibernate-mapping>

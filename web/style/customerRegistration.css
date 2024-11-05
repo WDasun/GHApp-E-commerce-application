@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.div-registration {
+    height: 30rem;
+}
+
+.div-registrationForm {
+    background-color: white;
+}
+
+.text-policy-customerRegistration {
+    font-size: 13px;
+}
+
+.btn-signup-customerRegistration {
+    height: 2.8rem;
+}
+
+.txt-heading-customerRegistration {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.img-customerRegistration {
+    object-fit: cover;
+}
+
+.div-footer-container {
+    margin-top: 10rem;
+}

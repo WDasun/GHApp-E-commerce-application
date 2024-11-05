@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.ProductItem" table="product_item" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="id" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="product" class="model.Product" fetch="select">
+            <column name="product_id" length="20" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="60" not-null="true" />
+        </property>
+        <property name="sku" type="string">
+            <column name="sku" length="60" not-null="true" />
+        </property>
+        <property name="qty" type="int">
+            <column name="qty" not-null="true" />
+        </property>
+        <property name="price" type="double">
+            <column name="price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="itemImgOnePath" type="string">
+            <column name="item_img_one_path" length="225" not-null="true" />
+        </property>
+        <property name="itemImgTwoPath" type="string">
+            <column name="item_img_two_path" length="225" not-null="true" />
+        </property>
+        <property name="itemImgThreePath" type="string">
+            <column name="item_img_three_path" length="225" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" not-null="true" />
+        </property>
+        <set name="wishLists" table="wish_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_item" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.WishList" />
+        </set>
+        <set name="reviews" table="review" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.Review" />
+        </set>
+        <set name="variationOptions" table="product_configuration" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="product_item_id" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="model.VariationOption">
+                <column name="variation_option_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="orderLines" table="order_line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_item_id" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.OrderLine" />
+        </set>
+        <set name="shoppingCartItems" table="shopping_cart_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_item_id" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.ShoppingCartItem" />
+        </set>
+    </class>
+</hibernate-mapping>

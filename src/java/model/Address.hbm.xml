@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2024 5:07:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Address" table="address" catalog="ghecommerceappdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="country" class="model.Country" fetch="select">
+            <column name="country_id" length="50" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customer" class="model.Customer" fetch="select">
+            <column name="customer_id" not-null="true" />
+        </many-to-one>
+        <property name="addressLine1" type="string">
+            <column name="address_line1" not-null="true" />
+        </property>
+        <property name="addressLine2" type="string">
+            <column name="address_line2" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="100" not-null="true" />
+        </property>
+        <property name="stateOrDistrict" type="string">
+            <column name="state_or_district" length="100" not-null="true" />
+        </property>
+        <property name="postalCode" type="string">
+            <column name="postal_code" length="20" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" not-null="true" />
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at" length="19" not-null="true" />
+        </property>
+        <set name="customerOrders" table="customer_order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="shipping_address" not-null="true" />
+            </key>
+            <one-to-many class="model.CustomerOrder" />
+        </set>
+    </class>
+</hibernate-mapping>

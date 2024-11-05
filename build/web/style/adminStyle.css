@@ -1,0 +1,137 @@
+body {
+    background-color: rgb(237, 242, 249);
+}
+
+
+/* Nav Bar styling */
+
+.c-navbar {
+    height: 80px;
+}
+
+.c-logo {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.c-text-heaven {
+    color: rgb(182, 165, 34);
+}
+
+.div-profile-image {
+    height: 40px;
+    width: 40px;
+}
+
+.img-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.txt-userName {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.txt-userType {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.div-searchBar {
+    width: 350px;
+}
+
+.div-searchBar-logo {
+    background-color: white;
+    border-right: 0;
+}
+
+.navbar-btn-icn {
+    width: 45px;
+    height: 40px;
+    background: transparent;
+    border: none;
+}
+
+.navbar-btn-hamburgerMenu {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-nebar-collapse {
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.div-navbar-collaps-items {
+    height: 35px;
+}
+
+.div-navbar-collaps-items:hover {
+    background-color: rgb(180, 187, 196);
+}
+
+
+/* Left and Right menu styling */
+
+.div-leftmenu,
+.div-rightmenu {
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+.btn-leftmenu {
+    border: none;
+    background: transparent;
+    /* border: solid;
+    border-width: 1px; */
+    width: 100%;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5e6e82;
+    text-align: left;
+}
+
+.btn-leftmenu:hover {
+    color: rgb(35, 46, 60);
+}
+
+.txt-leftmenu-sub {
+    font-size: 13.333px;
+}
+
+.icn-arrow {
+    transition: transform 0.3s;
+}
+
+.icn-arrow-rotated {
+    transform: rotate(180deg);
+}
+
+
+/* Menu offcanvas styling */
+
+.offcanvas-btn {
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    background: transparent;
+}
+
+
+/* Right menu styling */
+
+.txt-rightmenu-description {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(52, 64, 80);
+}

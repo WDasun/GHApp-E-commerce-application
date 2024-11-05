@@ -1,0 +1,19 @@
+.btn-subTopic-cProfile {
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-subTopic-cProfile:hover {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: rgb(159, 160, 163);
+}
+
+.div-dContent-cProfile {
+    background-color: white;
+}
+

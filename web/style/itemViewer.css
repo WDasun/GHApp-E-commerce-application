@@ -1,0 +1,78 @@
+body {
+    background-color: white;
+}
+
+.div-content {
+    /* height: 500px; */
+}
+
+.div-img {
+    height: 75%;
+    overflow: hidden;
+}
+
+.img-item {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.div-allImages {
+    width: 100%;
+    height: 25%;
+}
+
+.div-allImages-imgContainer {
+    height: 100%;
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.div-border {
+    width: 100%;
+    height: 100%;
+}
+
+.img-otherImages {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-itemActions {
+    background: white;
+    width: 100%;
+    border: none;
+}
+
+.btn-itemActions:hover {
+    background-color: rgb(234, 237, 237);
+}
+
+.div-itemInforRight {
+    font-size: 12px;
+    background-color: rgb(245, 245, 245);
+}
+
+.div-img-customer-review {
+    width: 2rem;
+    height: 2rem;
+}
+
+.div-customer-review-head {
+    font-size: 1rem;
+}
+
+.div-customer-review-body {
+    font-size: 0.9rem;
+}
+
+.div-customer-review-rating,
+.btn-helpful,
+.div-customer-review-footer {
+    font-size: 0.8rem;
+}
+
+.btn-writeACustomerReview {
+    height: 3rem;
+}
