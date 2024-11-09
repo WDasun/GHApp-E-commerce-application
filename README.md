@@ -13,3 +13,8 @@ Welcome to Glimmer Heaven, an e-commerce platform designed to provide a smooth a
     - Manageengine system user
     - Privilege management for Roles 
     - Shop Manage
+## Technologies Used
+* Frontend: HTML, CSS, Bootstrap 5, JavaScript
+* Backend: Java (Servlets, Hibernate)
+* Database: MySQL
+* Report Generation: Tibco Jaspersoft Studio
