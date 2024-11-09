@@ -18,3 +18,11 @@ Welcome to Glimmer Heaven, an e-commerce platform designed to provide a smooth a
 * Backend: Java (Servlets, Hibernate)
 * Database: MySQL
 * Report Generation: Tibco Jaspersoft Studio
+
+## Design Patterns Used
+### 1. MVC 
+    * Servlets act as controllers, processing client requests and directing responses. Hibernate manages the data model, and the view layer is constructed with HTML, CSS, JavaScript, and Bootstrap.
+### 2. DAO
+    * DAOs are used to perform CRUD operations on entities like customers, products, orders, and reviews, utilizing Hibernate to manage database access.
+### 3. Singleton
+    * Used in database connection management.
